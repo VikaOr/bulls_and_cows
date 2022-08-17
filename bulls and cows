@@ -1,0 +1,65 @@
+const readlineSync = require('readline-sync');
+let numleng = readlineSync.question('enter the number of digits in the number (from 3 to 6) ');
+//загадываем число
+let invnum = String(Math.floor(Math.random() * 9) + 1);
+let i = 0;
+let num;
+const str = "3456";
+let bul = true;
+while (bul) {
+    if (!~str.indexOf(String(numleng))) {
+        numleng = readlineSync.question('Enter one of the numbers: 3, 4, 5, 6:  ');
+    } else {
+        while (i < numleng - 1) {
+
+            num = String(Math.floor(Math.random() * 9));
+            if (~invnum.indexOf(num)) {
+                num = String(Math.floor(Math.random() * 9));
+            } else {
+                invnum = invnum + num;
+                i++
+            }
+
+        };
+
+        let j = 0;
+        while (j < 3) {
+
+            let enternum = readlineSync.question("Enter your number: ");
+
+
+            if (enternum === invnum) {
+                console.log("You are won!");
+                break;
+            } else {
+                let count1 = 0; //число совпадений
+                let count2 = 0; //число не на своем месте
+
+                for (let i = 0; i < numleng; i++) {;
+                    if (~invnum.indexOf(enternum[i])) {
+                        num = invnum.indexOf(enternum[i]);
+                        if (num == i) {
+                            count1++
+                        } else {
+                            count2++
+                        }
+                    }
+                };
+
+                if (count1 == 0 && count2 == 0) {
+                    console.log("There are no matches")
+                } else {
+                    console.log("In their place", count1, "coincided, but not in their places", count2);
+                };
+                if (j == 2) {
+                    console.log("You lost. The hidden number is", invnum)
+                    break;
+                } else { j++ }
+
+
+            }
+
+        };
+        bul = false;
+    }
+}
