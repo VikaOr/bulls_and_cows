@@ -66,7 +66,7 @@ while (bul) {
                     console.log("Совпавших цифр не на своих местах - ", count2, noConsNum, "Цифр на своих местах - ", count1, consNum, );
                 };
                 if (j == 2) {
-                    console.log("You lost. The hidden number is", invnum)
+                    console.log("Вы проиграли. Загаданное число - ", invnum)
                     break;
                 } else { j++ }
 
