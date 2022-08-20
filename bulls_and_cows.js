@@ -66,7 +66,7 @@ while (bul) {
                     console.log("Совпавших цифр не на своих местах - ", count2, noConsNum, "Цифр на своих местах - ", count1, consNum, );
                 };
                 if (j == 2) {
-                    console.log("Вы проиграли. Загаданное число - ", invnum)
+                    console.log("Вы проиграли. Загаданное число это - ", invnum)
                     break;
                 } else { j++ }
 
