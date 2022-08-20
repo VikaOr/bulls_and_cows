@@ -1,5 +1,5 @@
 const readlineSync = require('readline-sync');
-let numleng = readlineSync.question('Введите количество цифр в числе (от 3 до 6) ');
+let numleng = readlineSync.question('Введите количество цифр в числе: от 3 до 6 ');
 //загадываем число
 let invnum = String(Math.floor(Math.random() * 9) + 1);
 let i = 0;
